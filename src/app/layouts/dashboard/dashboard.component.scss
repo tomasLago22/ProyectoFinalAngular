@@ -1,0 +1,35 @@
+.example-container {
+    width: 100%;
+    height: 100vh;
+    border: 1px solid rgba(69, 82, 196, 0.5);
+  }
+  
+  .example-sidenav-content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .example-sidenav {
+    padding: 20px;
+  }
+
+  .cursos-container  a{
+    margin-bottom: 10px;
+    align-items: center;
+  }
+
+  .listaMenu {
+    display: flex;
+    list-style-type: none;
+    padding: 0; 
+}
+
+.listaMenu li {
+    margin-right: 3.5rem; 
+}
+
+.inicio {
+    margin-left: auto; 
+}

@@ -1,0 +1,55 @@
+
+
+
+<mat-drawer-container class="example-container" autosize>
+    
+    
+    <!-- SIDEBAR -->
+    <mat-drawer [opened]="true" #drawer class="example-sidenav" [mode]="isMobile() ? 'over' : 'side' ">
+      <p appDirectiva>Cursos</p>
+      @if (showFiller) {
+
+        <div class="cursos-container d-flex flex-column ">
+          <a href=""><span>  Angular </span></a>
+          <a href=""><span> JavaScript </span></a>
+          <a href=""><span> DesarrolloWeb </span></a>
+          <a href=""><span> Python </span></a>
+        </div>
+
+      }
+      <button (click)="showFiller = !showFiller" mat-raised-button>
+        Desplegar
+      </button>
+    </mat-drawer>
+    <!-- SIDEBAR -->
+
+    <!-- TOOLBAR SUPERIOR -->
+    <mat-toolbar color="primary">
+        <button
+        (click)="drawer.toggle()" 
+        mat-icon-button 
+        class="example-icon" 
+        aria-label="Example icon-button with menu icon">
+            <mat-icon>menu</mat-icon>
+          </button>
+          <ul class="listaMenu">
+            <li>Menu</li> 
+            <li class="Inicio">Inicio</li> 
+        </ul>
+         
+
+     </mat-toolbar>
+
+    <main style="padding:0.7rem">
+      <app-usuarios/>
+    </main>
+      <!-- TOOLBAR SUPERIOR -->
+
+  
+    <!-- <div class="example-sidenav-content">
+      <button type="button" mat-button (click)="drawer.toggle()">
+        Toggle sidenav
+      </button>
+    </div> -->
+  
+</mat-drawer-container>

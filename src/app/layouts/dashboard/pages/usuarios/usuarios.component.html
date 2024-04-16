@@ -41,7 +41,7 @@
     <th appTitulo mat-header-cell *matHeaderCellDef> Acciones </th>
     <td mat-cell *matCellDef="let element"> 
 
-      <button (click)="abrirDialogo()" mat-icon-button color="ascent"> 
+      <button (click)="abrirDialogo(element)" mat-icon-button color="ascent"> 
         <mat-icon> edit</mat-icon>
       </button>
 

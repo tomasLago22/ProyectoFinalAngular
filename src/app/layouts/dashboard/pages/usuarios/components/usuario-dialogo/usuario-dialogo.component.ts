@@ -18,7 +18,7 @@ constructor (
   private formBuilder : FormBuilder ,
   private matDialogRef: MatDialogRef <UsuarioDialogoComponent>,
   @Inject(MAT_DIALOG_DATA) private editandoUsuario? : Usuario
-){
+) {
   console.log(editandoUsuario)
 this.userForm = this.formBuilder.group({
   firstName: ['', [Validators.required, Validators.pattern('^[a-zA-ZÁÉÍÓÚáéíóúñÑ]+$')]],
@@ -31,10 +31,8 @@ this.userForm = this.formBuilder.group({
 })
 if(editandoUsuario){
   this.userForm.patchValue(editandoUsuario)
-    } 
-
 }
-
+}
 get firstNameControl(){
   return this.userForm.get('firstName');
 }

@@ -67,6 +67,11 @@ export class UsuariosComponent {
     next: (result) =>{
         if(result){
 
+
+          if(editandoUsuario){
+            this.usuarios =this.usuarios.map((usuario) => usuario.id === editandoUsuario.id ?{...usuario, ...result}:usuario )
+          }
+
           result.id= new Date(). getTime().toString().substring(0,3);
           result.creacion= new Date ()
           this.usuarios = [...this.usuarios, result]

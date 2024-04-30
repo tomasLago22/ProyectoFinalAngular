@@ -12,6 +12,9 @@ import {MatButtonModule} from '@angular/material/button';
 import { UsuariosModule } from './pages/usuarios/usuarios.module';
 import { PipesYDirectivasModule } from './pages/pipes-y-directivas/pipes-y-directivas.module';
 import { SharedModule } from '../../shared/shared.module';
+import { ProductsModule } from './pages/products/products.module';
+import { RxjsModule } from './pages/rxjs/rxjs.module';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { SharedModule } from '../../shared/shared.module';
     MatButtonModule,
     UsuariosModule,
     PipesYDirectivasModule,
-    SharedModule
+    SharedModule,
+    ProductsModule,
+    RxjsModule,
+    MatListModule
   ],
 
   exports: [DashboardComponent]

@@ -1,16 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Usuario } from './models';
 import { MatDialog } from '@angular/material/dialog';
 import { UsuarioDialogoComponent } from './components/usuario-dialogo/usuario-dialogo.component';
+import { UsuariosService } from './usuarios.service';
 
 @Component({
   selector: 'app-usuarios',
   templateUrl: './usuarios.component.html',
   styleUrl: './usuarios.component.scss'
 })
-export class UsuariosComponent {
+export class UsuariosComponent implements OnInit {
   displayedColumns: string[] = ['id','nombreCompleto', 'email','creacion', 'role','acciones'];
   
+  loading=false;
 
   usuarios: Usuario[] = [
     {
@@ -55,7 +57,23 @@ export class UsuariosComponent {
     }
   ]
 
-  constructor (private matDialog : MatDialog){}
+  constructor (private matDialog : MatDialog, private usuariosService:UsuariosService){}
+  ngOnInit(): void {
+    this.loading=true;
+  this.usuariosService.obtenerUsuarios().subscribe({
+    next: (usuarios) => {
+      console.log('next:' ,usuarios)
+    },
+    error: (err) => {
+      console.log(err)
+      
+    },
+    complete: () => {
+      console.log('Completado!')
+      this.loading=false
+    }
+  })
+  }
 
   abrirDialogo(editandoUsuario? : Usuario) : void{
     this.matDialog

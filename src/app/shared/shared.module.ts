@@ -10,7 +10,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { ErroresValidacionPipe } from './pipes/errores-validacion.pipe';
 import { DirectivaDirective } from './directives/directiva.directive';
-
+import {MatListModule} from '@angular/material/list';
 
 
 @NgModule({
@@ -34,6 +34,7 @@ import { DirectivaDirective } from './directives/directiva.directive';
     MatSelectModule,
     ReactiveFormsModule,
     MatIconModule,
+    MatListModule,
     ErroresValidacionPipe
   ]
 

@@ -15,7 +15,8 @@ import { SharedModule } from '../../../../shared/shared.module';
 import { PipesYDirectivasModule } from '../pipes-y-directivas/pipes-y-directivas.module';
 import { UsuariosDetallesComponent } from './pages/usuarios-detalles/usuarios-detalles.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-
+import { MatCardModule } from '@angular/material/card';
+import { MatListModule } from '@angular/material/list';
 @NgModule({
   declarations: [
     UsuariosComponent,
@@ -35,7 +36,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     SharedModule,
     PipesYDirectivasModule,
     MatProgressSpinnerModule,
-    
+    MatCardModule ,
+    MatListModule
     
   ],
 

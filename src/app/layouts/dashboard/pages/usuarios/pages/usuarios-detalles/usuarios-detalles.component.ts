@@ -12,6 +12,8 @@ import { Usuario } from '../../models';
 export class UsuariosDetallesComponent {
 
 usuario$: Observable<Usuario | undefined>
+nombreUsuario : string = ''
+apellido :string = ''
 
 
 loading = false
@@ -29,6 +31,10 @@ this.usuario$ = this.usuariosService.obtenerById(
   })
 )
 
+this.usuario$.subscribe(usuario =>{
+  this.nombreUsuario = usuario?.firstName ?? ''
+  this.apellido= usuario?.lastName ?? '';
+})
 
 }
 }
